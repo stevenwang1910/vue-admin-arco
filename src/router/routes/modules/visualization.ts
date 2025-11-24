@@ -12,7 +12,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
     order: 1,
   },
   children: [
-    {
+    { 
       path: 'data-analysis',
       name: 'DataAnalysis',
       component: () => import('@/views/visualization/data-analysis/index.vue'),
@@ -22,12 +22,22 @@ const VISUALIZATION: AppRouteRecordRaw = {
         roles: ['admin'],
       },
     },
-    {
+    { 
       path: 'multi-dimension-data-analysis',
       name: 'MultiDimensionDataAnalysis',
       component: () => import('@/views/visualization/multi-dimension-data-analysis/index.vue'),
       meta: {
         locale: 'menu.visualization.multiDimensionDataAnalysis',
+        requiresAuth: true,
+        roles: ['admin'],
+      },
+    },
+    { 
+      path: 'city-operation-monitoring',
+      name: 'CityOperationMonitoring',
+      component: () => import('@/views/visualization/city-operation-monitoring/index.vue'),
+      meta: {
+        locale: 'menu.visualization.cityOperationMonitoring',
         requiresAuth: true,
         roles: ['admin'],
       },
