@@ -36,3 +36,7 @@ export interface ChatRecord {
 export function queryChatList() {
   return axios.post<ChatRecord[]>('/api/chat/list')
 }
+
+export function sendMessage(data: { content: string }) {
+  return axios.post<ChatRecord>('/api/chat/send', data)
+}

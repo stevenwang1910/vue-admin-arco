@@ -22,5 +22,17 @@ setupMock({
       })
       return successResponseWrap(data.data)
     })
+
+    Mock.mock(new RegExp('/api/chat/send'), (config) => {
+      const { content } = JSON.parse(config.body)
+      const data = Mock.mock({
+        id: Date.now(),
+        username: '我',
+        content,
+        time: new Date().toLocaleTimeString(),
+        isCollect: false,
+      })
+      return successResponseWrap(data)
+    })
   },
 })

@@ -29,12 +29,12 @@
     </div>
     <div class="chat-panel-footer">
       <a-space :size="8">
-        <a-Input>
+        <a-Input v-model="messageContent">
           <template #suffix>
             <icon-face-smile-fill />
           </template>
         </a-Input>
-        <a-button type="primary">{{ $t('monitor.chat.update') }}</a-button>
+        <a-button type="primary" @click="handleSendMessage">{{ $t('monitor.chat.send') }}</a-button>
       </a-space>
     </div>
   </a-card>
@@ -42,12 +42,14 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { queryChatList, ChatRecord } from '@/api/message'
+import { queryChatList, sendMessage, ChatRecord } from '@/api/message'
 import useLoading from '@/hooks/loading'
 import ChatList from './chat-list.vue'
 
 const { loading, setLoading } = useLoading(true)
 const chatData = ref<ChatRecord[]>([])
+const messageContent = ref('')
+
 const fetchData = async () => {
   try {
     const { data } = await queryChatList()
@@ -58,6 +60,18 @@ const fetchData = async () => {
     setLoading(false)
   }
 }
+
+const handleSendMessage = async () => {
+  if (!messageContent.value.trim()) return
+  try {
+    const { data } = await sendMessage({ content: messageContent.value })
+    chatData.value.push(data)
+    messageContent.value = ''
+  } catch (err) {
+    // you can report use errorHandler or other
+  }
+}
+
 fetchData()
 </script>
 
