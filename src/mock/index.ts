@@ -2,6 +2,7 @@ import Mock from 'mockjs'
 
 import './user'
 import './message-box'
+import './content'
 
 import '@/views/dashboard/workplace/mock'
 /** simple */
