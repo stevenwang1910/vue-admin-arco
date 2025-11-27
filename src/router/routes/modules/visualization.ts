@@ -32,6 +32,16 @@ const VISUALIZATION: AppRouteRecordRaw = {
         roles: ['admin'],
       },
     },
+    {
+      path: 'city-operation',
+      name: 'CityOperation',
+      component: () => import('@/views/visualization/city-operation/index.vue'),
+      meta: {
+        locale: 'menu.visualization.cityOperation',
+        requiresAuth: true,
+        roles: ['admin'],
+      },
+    },
   ],
 }
 
