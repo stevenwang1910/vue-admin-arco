@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, h, compile } from 'vue'
+import { computed, h, compile, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import type { TableColumnData, TableData } from '@arco-design/web-vue/es/table/interface.d'
 
@@ -30,16 +30,44 @@ interface PreviewRecord {
   id: string
   status: number
 }
+
+interface LiveInfo {
+  name: string
+  duration: string
+  status: number
+  cover: string
+}
+
 const { t } = useI18n()
-const data: PreviewRecord[] = [
+
+const props = defineProps<{
+  liveInfo: LiveInfo
+}>()
+
+const data = ref<PreviewRecord[]>([
   {
-    cover: 'http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c788fc704d32cf3b1136c7d45afc2669.png~tplv-uwbnlip3yd-webp.webp',
-    name: '视频直播',
-    duration: '00:05:19',
+    cover: props.liveInfo.cover,
+    name: props.liveInfo.name,
+    duration: props.liveInfo.duration,
     id: '54e23ade',
-    status: -1,
+    status: props.liveInfo.status,
   },
-]
+])
+
+// 监听直播信息变化
+watch(
+  () => props.liveInfo,
+  (newValue) => {
+    data.value[0] = {
+      ...data.value[0],
+      cover: newValue.cover,
+      name: newValue.name,
+      duration: newValue.duration,
+      status: newValue.status,
+    }
+  },
+  { deep: true }
+)
 const renderTag = (status: number) => {
   if (status === -1) {
     return `<a-tag  color="red" class='data-statistic-list-cover-tag'>
