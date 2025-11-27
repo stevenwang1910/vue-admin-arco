@@ -65,5 +65,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 0,
     'vue/attribute-hyphenation': 0,
     '@typescript-eslint/ban-types': 0,
+    // 禁用 no-plusplus 规则
+    'no-plusplus': 0,
   },
 }
