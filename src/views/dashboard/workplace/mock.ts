@@ -118,10 +118,10 @@ setupMock({
     Mock.mock(new RegExp('/api/popular/list'), (params: GetParams) => {
       const { type = 'text' } = qs.parseUrl(params.url).query
       if (type === 'image') {
-        return successResponseWrap([...videoList])
+        return successResponseWrap([...imageList])
       }
       if (type === 'video') {
-        return successResponseWrap([...imageList])
+        return successResponseWrap([...videoList])
       }
       return successResponseWrap([...textList])
     })

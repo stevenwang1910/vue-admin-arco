@@ -25,6 +25,7 @@ import locale500 from '@/views/exception/500/locale/en-US'
 
 import localeUserInfo from '@/views/user/info/locale/en-US'
 import localeUserSetting from '@/views/user/setting/locale/en-US'
+import localePopularContentManagement from '@/views/popular-content-management/locale/en-US'
 /** simple end */
 import localeSettings from './en-US/settings'
 
@@ -64,5 +65,6 @@ export default {
   ...locale500,
   ...localeUserInfo,
   ...localeUserSetting,
+  ...localePopularContentManagement,
   /** simple end */
 }
