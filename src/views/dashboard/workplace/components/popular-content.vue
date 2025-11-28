@@ -5,8 +5,8 @@
         {{ $t('workplace.popularContent') }}
       </template>
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
-      </template>
+  <a-link @click="goToManagement">{{ $t('workplace.viewMore') }}</a-link>
+</template>
       <a-space direction="vertical" :size="10" fill>
         <a-radio-group v-model:model-value="type" type="button" @change="typeChange as any">
           <a-radio value="text">
@@ -19,18 +19,26 @@
             {{ $t('workplace.popularContent.video') }}
           </a-radio>
         </a-radio-group>
-        <a-table :data="renderList" :pagination="false" :bordered="false" :scroll="{ x: '100%', y: '264px' }">
+        <transition name="table-fade">
+          <a-table :data="renderList" :pagination="false" :bordered="false" :scroll="{ x: '100%', y: '264px' }">
           <template #columns>
             <a-table-column title="排名" data-index="key"></a-table-column>
             <a-table-column title="内容标题" data-index="title">
               <template #cell="{ record }">
-                <a-typography-paragraph
-                  :ellipsis="{
-                    rows: 1,
-                  }"
-                >
-                  {{ record.title }}
-                </a-typography-paragraph>
+                <a-space size="small" align="center">
+                  <component :is="{
+                    text: IconText,
+                    image: IconPicture,
+                    video: IconVideoPlay
+                  }[type.value]"></component>
+                  <a-typography-paragraph
+                    :ellipsis="{
+                      rows: 1,
+                    }"
+                  >
+                    {{ record.title }}
+                  </a-typography-paragraph>
+                </a-space>
               </template>
             </a-table-column>
             <a-table-column title="点击量" data-index="clickNumber"></a-table-column>
@@ -50,6 +58,7 @@
             </a-table-column>
           </template>
         </a-table>
+        </transition>
       </a-space>
     </a-card>
   </a-spin>
@@ -57,9 +66,15 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import useLoading from '@/hooks/loading'
 import { queryPopularList } from '@/api/dashboard'
 import type { TableData } from '@arco-design/web-vue/es/table/interface'
+
+const router = useRouter()
+const goToManagement = () => {
+  router.push('/popular-content-management')
+}
 
 const type = ref('text')
 const { loading, setLoading } = useLoading()
@@ -97,5 +112,14 @@ fetchData('text')
   span {
     margin-right: 4px;
   }
+}
+.table-fade-enter-active,
+.table-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.table-fade-enter-from,
+.table-fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 </style>
