@@ -17,6 +17,9 @@ module.exports = {
     browser: true,
     node: true,
   },
+  globals: {
+    $t: true
+  },
   plugins: ['@typescript-eslint'],
   extends: [
     // Airbnb JavaScript Style Guide https://github.com/airbnb/javascript

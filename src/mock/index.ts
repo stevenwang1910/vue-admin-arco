@@ -16,6 +16,7 @@ import '@/views/profile/basic/mock'
 
 import '@/views/visualization/data-analysis/mock'
 import '@/views/visualization/multi-dimension-data-analysis/mock'
+import './live-sales-dashboard'
 
 import '@/views/user/info/mock'
 import '@/views/user/setting/mock'

@@ -32,6 +32,16 @@ const VISUALIZATION: AppRouteRecordRaw = {
         roles: ['admin'],
       },
     },
+    {
+      path: 'live-sales-dashboard',
+      name: 'LiveSalesDashboard',
+      component: () => import('@/views/visualization/live-sales-dashboard/index.vue'),
+      meta: {
+        locale: 'menu.visualization.liveSalesDashboard',
+        requiresAuth: true,
+        roles: ['admin'],
+      },
+    },
   ],
 }
 
