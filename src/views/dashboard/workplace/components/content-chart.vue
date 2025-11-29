@@ -9,10 +9,13 @@
       :title="$t('workplace.contentData')"
     >
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-button type="primary" @click="openDataManagement">
+          {{ $t('workplace.viewMore') }}
+        </a-button>
       </template>
       <Chart height="289px" :option="chartOption" />
     </a-card>
+    <ContentDataManagement v-model:visible="dataManagementVisible" />
   </a-spin>
 </template>
 
@@ -24,6 +27,7 @@ import { queryContentData, ContentDataRecord } from '@/api/dashboard'
 import useChartOption from '@/hooks/chart-option'
 import { ToolTipFormatterParams } from '@/types/echarts'
 import { AnyObject } from '@/types/global'
+import ContentDataManagement from './content-data-management.vue'
 
 function graphicFactory(side: AnyObject) {
   return {
@@ -191,6 +195,13 @@ const fetchData = async () => {
     setLoading(false)
   }
 }
+
+// Data management modal
+const dataManagementVisible = ref(false)
+const openDataManagement = () => {
+  dataManagementVisible.value = true
+}
+
 fetchData()
 </script>
 
