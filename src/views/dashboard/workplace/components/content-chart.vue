@@ -9,11 +9,16 @@
       :title="$t('workplace.contentData')"
     >
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-button type="text" @click="handleViewMore">
+          {{ $t('workplace.viewMore') }}
+        </a-button>
       </template>
       <Chart height="289px" :option="chartOption" />
     </a-card>
   </a-spin>
+
+  <!-- 数据管理模态框 -->
+  <ContentManagementModal v-model:visible="modalVisible" @refresh="handleRefresh" />
 </template>
 
 <script lang="ts" setup>
@@ -24,6 +29,7 @@ import { queryContentData, ContentDataRecord } from '@/api/dashboard'
 import useChartOption from '@/hooks/chart-option'
 import { ToolTipFormatterParams } from '@/types/echarts'
 import { AnyObject } from '@/types/global'
+import ContentManagementModal from './content-management-modal.vue'
 
 function graphicFactory(side: AnyObject) {
   return {
@@ -171,6 +177,12 @@ const { chartOption } = useChartOption(() => {
     ],
   }
 })
+const modalVisible = ref(false)
+
+const handleViewMore = () => {
+  modalVisible.value = true
+}
+
 const fetchData = async () => {
   setLoading(true)
   try {
@@ -191,7 +203,67 @@ const fetchData = async () => {
     setLoading(false)
   }
 }
+
+const handleRefresh = () => {
+  fetchData()
+}
+
 fetchData()
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.general-card {
+  border-radius: 4px;
+  border: none;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  :deep(.arco-card-header) {
+    padding: 12px 16px;
+  }
+
+  :deep(.arco-card-body) {
+    padding: 16px;
+  }
+
+  :deep(.arco-statistic) {
+    padding: 12px;
+  }
+
+  :deep(.arco-statistic-title) {
+    font-size: 12px;
+  }
+
+  :deep(.arco-statistic-value) {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  :deep(.arco-card-header) {
+    padding: 10px 12px;
+  }
+
+  :deep(.arco-card-body) {
+    padding: 12px;
+  }
+
+  :deep(.arco-statistic) {
+    padding: 8px;
+  }
+
+  :deep(.arco-statistic-title) {
+    font-size: 11px;
+  }
+
+  :deep(.arco-statistic-value) {
+    font-size: 16px;
+  }
+
+  :deep(.arco-btn) {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+</style>
