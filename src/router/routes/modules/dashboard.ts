@@ -34,6 +34,16 @@ const DASHBOARD: AppRouteRecordRaw = {
       },
     },
     /** simple end */
+    {
+      path: 'data-management',
+      name: 'DataManagement',
+      component: () => import('@/views/dashboard/data-management/index.vue'),
+      meta: {
+        locale: 'menu.dashboard.dataManagement',
+        requiresAuth: true,
+        roles: ['admin'],
+      },
+    },
   ],
 }
 

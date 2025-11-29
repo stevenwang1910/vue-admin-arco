@@ -4,6 +4,7 @@ import './user'
 import './message-box'
 
 import '@/views/dashboard/workplace/mock'
+import '@/views/dashboard/data-management/mock'
 /** simple */
 import '@/views/dashboard/monitor/mock'
 
