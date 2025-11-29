@@ -5,7 +5,11 @@
   "editor.quickSuggestions": {
     "strings": true
   },
+<<<<<<< Updated upstream
   "workbench.colorTheme": "One Monokai",
+=======
+  "workbench.colorTheme": "Light",
+>>>>>>> Stashed changes
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "emmet.triggerExpansionOnTab": true,
