@@ -34,7 +34,7 @@
           textAlign: 'left',
         }"
       >
-        <template #label="{ label }">{{ $t(label) }} :</template>
+        <template #label="{ label }">{{ t(label) }} :</template>
         <template #value="{ value, data }">
           <a-tag v-if="data.label === 'userSetting.label.certification'" color="green" size="small">已认证</a-tag>
           <span v-else>{{ value }}</span>
@@ -46,10 +46,12 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { FileItem, RequestOption } from '@arco-design/web-vue/es/upload/interfaces'
 import { useUserStore } from '@/store'
 import { userUploadApi } from '@/api/user-center'
 import type { DescData } from '@arco-design/web-vue/es/descriptions/interface'
+const { t } = useI18n()
 
 const userStore = useUserStore()
 const file = {

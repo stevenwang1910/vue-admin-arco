@@ -1,7 +1,7 @@
 <template>
   <div class="list-wrap">
     <a-typography-title class="block-title" :heading="6">
-      {{ $t('cardList.tab.title.service') }}
+      {{ t('cardList.tab.title.service') }}
     </a-typography-title>
     <a-row class="list-row" :gutter="24">
       <a-col
@@ -23,11 +23,11 @@
           :default-value="item.enable"
           :action-type="item.actionType"
           :expires="item.expires"
-          :open-txt="$t('cardList.service.open')"
-          :close-txt="$t('cardList.service.cancel')"
-          :expires-text="$t('cardList.service.renew')"
-          :tag-text="$t('cardList.service.tag')"
-          :expires-tag-text="$t('cardList.service.expiresTag')"
+          :open-txt="t('cardList.service.open')"
+          :close-txt="t('cardList.service.cancel')"
+          :expires-text="t('cardList.service.renew')"
+          :tag-text="t('cardList.service.tag')"
+          :expires-tag-text="t('cardList.service.expiresTag')"
           :icon="item.icon"
         >
           <template #skeleton>
@@ -43,10 +43,12 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
 import { queryTheServiceList, ServiceRecord } from '@/api/list'
 import useRequest from '@/hooks/request'
 import CardWrap from './card-wrap.vue'
 
+const { t } = useI18n()
 const defaultValue: ServiceRecord[] = new Array(4).fill({})
 const { loading, response: renderData } = useRequest<ServiceRecord[]>(queryTheServiceList, defaultValue)
 </script>

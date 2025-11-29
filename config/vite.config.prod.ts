@@ -12,7 +12,11 @@ export default mergeConfig(
       chunkSizeWarningLimit: 20480,
       reportCompressedSize: false,
       rollupOptions: {
-        onwarn: () => {},
+        onwarn: (warning) => {
+          if (warning.code !== 'UNUSED_EXTERNAL_IMPORT') {
+            // console.warn(warning)
+          }
+        },
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',

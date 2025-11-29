@@ -1,8 +1,8 @@
 <template>
-  <a-card class="general-card" :title="$t('userInfo.title.myProject')">
+  <a-card class="general-card" :title="t('userInfo.title.myProject')">
     <template #extra>
-      <a-link>{{ $t('userInfo.showMore') }}</a-link>
-    </template>
+  <a-link>{{ t('userInfo.showMore') }}</a-link>
+</template>
     <a-row :gutter="16">
       <a-col
         v-for="(project, index) in projectList"
@@ -41,8 +41,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
 import { queryMyProjectList, MyProjectRecord } from '@/api/user-center'
 import useRequest from '@/hooks/request'
+const { t } = useI18n()
 
 const defaultValue = Array(6).fill({} as MyProjectRecord)
 const { loading, response: projectList } = useRequest<MyProjectRecord[]>(queryMyProjectList, defaultValue)

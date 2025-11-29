@@ -1,8 +1,8 @@
 <template>
-  <a-card class="general-card" :title="$t('userInfo.title.latestActivity')">
-    <template #extra>
-      <a-link>{{ $t('userInfo.viewAll') }}</a-link>
-    </template>
+  <a-card class="general-card" :title="t('userInfo.title.latestActivity')">
+  <template #extra>
+    <a-link>{{ t('userInfo.viewAll') }}</a-link>
+  </template>
     <a-list :bordered="false">
       <a-list-item v-for="activity in activityList" :key="activity.id" action-layout="horizontal">
         <a-skeleton v-if="loading" :loading="loading" :animation="true" class="skeleton-item">
@@ -29,8 +29,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { queryLatestActivity, LatestActivity } from '@/api/user-center'
 import useLoading from '@/hooks/loading'
+const { t } = useI18n()
 
 const { loading, setLoading } = useLoading(true)
 const activityList = ref<LatestActivity[]>(new Array(7).fill({}))

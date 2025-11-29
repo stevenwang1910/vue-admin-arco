@@ -8,7 +8,7 @@
       }"
     >
       <template #title>
-        {{ $t('workplace.categoriesPercent') }}
+        {{ t('workplace.categoriesPercent') }}
       </template>
       <Chart height="310px" :option="chartOption" />
     </a-card>
@@ -16,6 +16,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 import useLoading from '@/hooks/loading'
 import useChartOption from '@/hooks/chart-option'
 

@@ -1,7 +1,7 @@
 <template>
   <div class="list-wrap">
     <a-typography-title class="block-title" :heading="6">
-      {{ $t('cardList.tab.title.preset') }}
+      {{ t('cardList.tab.title.preset') }}
     </a-typography-title>
     <a-row class="list-row" :gutter="24">
       <a-col
@@ -22,7 +22,7 @@
           :description="item.description"
           :default-value="item.enable"
           :action-type="item.actionType"
-          :tag-text="$t('cardList.preset.tag')"
+          :tag-text="t('cardList.preset.tag')"
         >
           <template #skeleton>
             <a-skeleton :animation="true">
@@ -37,10 +37,12 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
 import { queryRulesPresetList, ServiceRecord } from '@/api/list'
 import useRequest from '@/hooks/request'
 import CardWrap from './card-wrap.vue'
 
+const { t } = useI18n()
 const defaultValue: ServiceRecord[] = new Array(6).fill({})
 const { loading, response: renderData } = useRequest<ServiceRecord[]>(queryRulesPresetList, defaultValue)
 </script>

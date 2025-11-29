@@ -32,6 +32,16 @@ const VISUALIZATION: AppRouteRecordRaw = {
         roles: ['admin'],
       },
     },
+    {
+      path: 'ecommerce-live-sales',
+      name: 'EcommerceLiveSales',
+      component: () => import('@/views/visualization/ecommerce-live-sales/index.vue'),
+      meta: {
+        locale: 'menu.visualization.ecommerceLiveSales',
+        requiresAuth: true,
+        roles: ['admin'],
+      },
+    },
   ],
 }
 

@@ -1,7 +1,7 @@
 <template>
   <a-card
     class="general-card"
-    :title="$t('workplace.recently.visited')"
+    :title="t('workplace.recently.visited')"
     :header-style="{ paddingBottom: '0' }"
     :body-style="{ paddingTop: '26px' }"
   >
@@ -12,7 +12,7 @@
             <component :is="link.icon" />
           </div>
           <a-typography-paragraph class="text">
-            {{ $t(link.text) }}
+            {{ t(link.text) }}
           </a-typography-paragraph>
         </a-col>
       </a-row>
@@ -21,6 +21,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const links = [
   {
     text: 'workplace.contentManagement',

@@ -15,6 +15,7 @@ import localeBasicProfile from '@/views/profile/basic/locale/en-US'
 
 import localeDataAnalysis from '@/views/visualization/data-analysis/locale/en-US'
 import localeMultiDAnalysis from '@/views/visualization/multi-dimension-data-analysis/locale/en-US'
+import localeEcommerceLiveSales from '@/views/visualization/ecommerce-live-sales/locale/en-US'
 
 import localeError from '@/views/result/error/locale/en-US'
 import localeSuccess from '@/views/result/success/locale/en-US'
@@ -57,6 +58,7 @@ export default {
   ...localeBasicProfile,
   ...localeDataAnalysis,
   ...localeMultiDAnalysis,
+  ...localeEcommerceLiveSales,
   ...localeSuccess,
   ...localeError,
   ...locale403,

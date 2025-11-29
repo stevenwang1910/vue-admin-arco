@@ -2,7 +2,7 @@
   <div class="block">
     <h5 class="title">{{ title }}</h5>
     <div v-for="option in options" :key="option.name" class="switch-wrapper">
-      <span>{{ $t(option.name) }}</span>
+      <span>{{ t(option.name) }}</span>
       <form-wrapper :type="option.type || 'switch'" :name="option.key" :default-value="option.defaultVal" @input-change="handleChange" />
     </div>
   </div>
@@ -10,6 +10,7 @@
 
 <script lang="ts" setup>
 import { useAppStore } from '@/store'
+import { useI18n } from 'vue-i18n'
 import { PropType } from 'vue'
 import FormWrapper from './form-wrapper.vue'
 
@@ -32,6 +33,7 @@ defineProps({
   },
 })
 const appStore = useAppStore()
+const { t } = useI18n()
 const handleChange = async ({ key, value }: { key: string; value: unknown }) => {
   if (key === 'colorWeak') {
     document.body.style.filter = value ? 'invert(80%)' : 'none'

@@ -1,7 +1,7 @@
 <template>
   <a-card
     class="general-card"
-    :title="$t('userInfo.tab.title.team')"
+    :title="t('userInfo.tab.title.team')"
     :header-style="{ paddingBottom: '18px' }"
     :body-style="{ paddingBottom: '12px' }"
   >
@@ -31,8 +31,12 @@
 </template>
 
 <script lang="ts" setup>
-import { queryMyTeamList, MyTeamRecord } from '@/api/user-center'
-import useRequest from '@/hooks/request'
+import { queryMyTeamList } from '@/api/user-center'
+import type MyTeamRecord from '@/types/api/user-center/MyTeamRecord'
+import { useRequest } from 'vue-request'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const defaultValue: MyTeamRecord[] = new Array(4).fill({})
 const { loading, response: teamList } = useRequest<MyTeamRecord[]>(queryMyTeamList, defaultValue)

@@ -6,10 +6,10 @@
       :body-style="{
         paddingTop: '20px',
       }"
-      :title="$t('workplace.contentData')"
+      :title="t('workplace.contentData')"
     >
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-link>{{ t('workplace.viewMore') }}</a-link>
       </template>
       <Chart height="289px" :option="chartOption" />
     </a-card>
@@ -17,6 +17,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 import { ref } from 'vue'
 import { graphic } from 'echarts'
 import useLoading from '@/hooks/loading'

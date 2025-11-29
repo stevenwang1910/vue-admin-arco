@@ -4,18 +4,18 @@
     <a-spin :loading="loading" style="width: 100%">
       <a-card class="general-card">
         <template #title>
-          {{ $t('stepForm.step.title') }}
+          {{ t('stepForm.step.title') }}
         </template>
         <div class="wrapper">
           <a-steps v-model:current="step" style="width: 580px" line-less class="steps">
-            <a-step :description="$t('stepForm.step.subTitle.baseInfo')">
-              {{ $t('stepForm.step.title.baseInfo') }}
+            <a-step :description="t('stepForm.step.subTitle.baseInfo')">
+              {{ t('stepForm.step.title.baseInfo') }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.channel')">
-              {{ $t('stepForm.step.title.channel') }}
+            <a-step :description="t('stepForm.step.subTitle.channel')">
+              {{ t('stepForm.step.title.channel') }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.finish')">
-              {{ $t('stepForm.step.title.finish') }}
+            <a-step :description="t('stepForm.step.subTitle.finish')">
+              {{ t('stepForm.step.title.finish') }}
             </a-step>
           </a-steps>
           <keep-alive>
@@ -30,12 +30,16 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 import useLoading from '@/hooks/loading'
 import { submitChannelForm, BaseInfoModel, ChannelInfoModel, UnitChannelModel } from '@/api/form'
 import BaseInfo from './components/base-info.vue'
 import ChannelInfo from './components/channel-info.vue'
 import Success from './components/success.vue'
+
+const { t } = useI18n()
+
 
 const { loading, setLoading } = useLoading(false)
 const step = ref(1)

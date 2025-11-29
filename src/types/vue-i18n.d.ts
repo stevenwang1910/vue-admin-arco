@@ -1,8 +1,10 @@
+import type { ComponentCustomProperties } from 'vue'
 import type { Composer } from 'vue-i18n'
 
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomProperties {
-    $t: any
+    $t: Composer['t']
+    $i18n: Composer
   }
 }
 
