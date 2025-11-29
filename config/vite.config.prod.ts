@@ -12,7 +12,9 @@ export default mergeConfig(
       chunkSizeWarningLimit: 20480,
       reportCompressedSize: false,
       rollupOptions: {
-        onwarn: () => {},
+        onwarn: () => {
+          // 空函数用于抑制警告
+        },
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',

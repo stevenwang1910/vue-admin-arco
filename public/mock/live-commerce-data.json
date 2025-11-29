@@ -1,0 +1,485 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "metrics": [
+      {
+        "key": "onlineUsers",
+        "title": "实时在线人数",
+        "value": 1250,
+        "unit": "人",
+        "trend": "up",
+        "trendValue": 12.5,
+        "icon": "icon-user",
+        "color": "blue"
+      },
+      {
+        "key": "totalViews",
+        "title": "累计观看人次",
+        "value": 45678,
+        "unit": "次",
+        "trend": "up",
+        "trendValue": 23.8,
+        "icon": "icon-eye",
+        "color": "green"
+      },
+      {
+        "key": "salesAmount",
+        "title": "销售额",
+        "value": 356789,
+        "unit": "元",
+        "trend": "up",
+        "trendValue": 18.2,
+        "icon": "icon-money",
+        "color": "orange",
+        "isCurrency": true
+      },
+      {
+        "key": "orderCount",
+        "title": "订单量",
+        "value": 1234,
+        "unit": "单",
+        "trend": "up",
+        "trendValue": 15.7,
+        "icon": "icon-calendar",
+        "color": "purple"
+      },
+      {
+        "key": "avgOrderValue",
+        "title": "客单价",
+        "value": 289,
+        "unit": "元",
+        "trend": "down",
+        "trendValue": 3.2,
+        "icon": "icon-tag",
+        "color": "cyan",
+        "isCurrency": true
+      },
+      {
+        "key": "conversionRate",
+        "title": "转化率",
+        "value": "4.8",
+        "unit": "%",
+        "trend": "up",
+        "trendValue": 0.5,
+        "icon": "icon-star",
+        "color": "red"
+      }
+    ],
+    "salesTrendData": {
+      "sales": [
+        { "time": "00:00", "value": 12000 },
+        { "time": "01:00", "value": 15000 },
+        { "time": "02:00", "value": 8000 },
+        { "time": "03:00", "value": 6000 },
+        { "time": "04:00", "value": 9000 },
+        { "time": "05:00", "value": 11000 },
+        { "time": "06:00", "value": 18000 },
+        { "time": "07:00", "value": 25000 },
+        { "time": "08:00", "value": 32000 },
+        { "time": "09:00", "value": 28000 },
+        { "time": "10:00", "value": 35000 },
+        { "time": "11:00", "value": 42000 },
+        { "time": "12:00", "value": 38000 },
+        { "time": "13:00", "value": 45000 },
+        { "time": "14:00", "value": 52000 },
+        { "time": "15:00", "value": 48000 },
+        { "time": "16:00", "value": 55000 },
+        { "time": "17:00", "value": 62000 },
+        { "time": "18:00", "value": 58000 },
+        { "time": "19:00", "value": 65000 },
+        { "time": "20:00", "value": 72000 },
+        { "time": "21:00", "value": 68000 },
+        { "time": "22:00", "value": 75000 },
+        { "time": "23:00", "value": 45000 }
+      ],
+      "orders": [
+        { "time": "00:00", "value": 45 },
+        { "time": "01:00", "value": 52 },
+        { "time": "02:00", "value": 28 },
+        { "time": "03:00", "value": 18 },
+        { "time": "04:00", "value": 32 },
+        { "time": "05:00", "value": 41 },
+        { "time": "06:00", "value": 68 },
+        { "time": "07:00", "value": 95 },
+        { "time": "08:00", "value": 128 },
+        { "time": "09:00", "value": 112 },
+        { "time": "10:00", "value": 145 },
+        { "time": "11:00", "value": 178 },
+        { "time": "12:00", "value": 152 },
+        { "time": "13:00", "value": 189 },
+        { "time": "14:00", "value": 218 },
+        { "time": "15:00", "value": 192 },
+        { "time": "16:00", "value": 235 },
+        { "time": "17:00", "value": 268 },
+        { "time": "18:00", "value": 248 },
+        { "time": "19:00", "value": 285 },
+        { "time": "20:00", "value": 318 },
+        { "time": "21:00", "value": 292 },
+        { "time": "22:00", "value": 325 },
+        { "time": "23:00", "value": 185 }
+      ],
+      "conversionRate": [
+        { "time": "00:00", "value": 3.2 },
+        { "time": "01:00", "value": 3.8 },
+        { "time": "02:00", "value": 2.1 },
+        { "time": "03:00", "value": 1.5 },
+        { "time": "04:00", "value": 2.8 },
+        { "time": "05:00", "value": 3.1 },
+        { "time": "06:00", "value": 4.2 },
+        { "time": "07:00", "value": 5.8 },
+        { "time": "08:00", "value": 6.2 },
+        { "time": "09:00", "value": 5.5 },
+        { "time": "10:00", "value": 6.8 },
+        { "time": "11:00", "value": 7.2 },
+        { "time": "12:00", "value": 6.5 },
+        { "time": "13:00", "value": 7.8 },
+        { "time": "14:00", "value": 8.2 },
+        { "time": "15:00", "value": 7.5 },
+        { "time": "16:00", "value": 8.8 },
+        { "time": "17:00", "value": 9.2 },
+        { "time": "18:00", "value": 8.5 },
+        { "time": "19:00", "value": 9.8 },
+        { "time": "20:00", "value": 10.2 },
+        { "time": "21:00", "value": 9.5 },
+        { "time": "22:00", "value": 10.8 },
+        { "time": "23:00", "value": 6.2 }
+      ]
+    },
+    "onlineUsersData": [
+      { "time": "14:00:00", "value": 800 },
+      { "time": "14:01:00", "value": 850 },
+      { "time": "14:02:00", "value": 920 },
+      { "time": "14:03:00", "value": 880 },
+      { "time": "14:04:00", "value": 950 },
+      { "time": "14:05:00", "value": 1020 },
+      { "time": "14:06:00", "value": 1100 },
+      { "time": "14:07:00", "value": 1050 },
+      { "time": "14:08:00", "value": 1150 },
+      { "time": "14:09:00", "value": 1200 },
+      { "time": "14:10:00", "value": 1180 },
+      { "time": "14:11:00", "value": 1250 },
+      { "time": "14:12:00", "value": 1300 },
+      { "time": "14:13:00", "value": 1280 },
+      { "time": "14:14:00", "value": 1350 },
+      { "time": "14:15:00", "value": 1320 },
+      { "time": "14:16:00", "value": 1400 },
+      { "time": "14:17:00", "value": 1380 },
+      { "time": "14:18:00", "value": 1450 },
+      { "time": "14:19:00", "value": 1420 },
+      { "time": "14:20:00", "value": 1500 },
+      { "time": "14:21:00", "value": 1480 },
+      { "time": "14:22:00", "value": 1550 },
+      { "time": "14:23:00", "value": 1520 },
+      { "time": "14:24:00", "value": 1600 },
+      { "time": "14:25:00", "value": 1580 },
+      { "time": "14:26:00", "value": 1650 },
+      { "time": "14:27:00", "value": 1620 },
+      { "time": "14:28:00", "value": 1700 },
+      { "time": "14:29:00", "value": 1680 },
+      { "time": "14:30:00", "value": 1750 },
+      { "time": "14:31:00", "value": 1720 },
+      { "time": "14:32:00", "value": 1800 },
+      { "time": "14:33:00", "value": 1780 },
+      { "time": "14:34:00", "value": 1850 },
+      { "time": "14:35:00", "value": 1820 },
+      { "time": "14:36:00", "value": 1900 },
+      { "time": "14:37:00", "value": 1880 },
+      { "time": "14:38:00", "value": 1950 },
+      { "time": "14:39:00", "value": 1920 },
+      { "time": "14:40:00", "value": 2000 },
+      { "time": "14:41:00", "value": 1980 },
+      { "time": "14:42:00", "value": 2050 },
+      { "time": "14:43:00", "value": 2020 },
+      { "time": "14:44:00", "value": 2100 },
+      { "time": "14:45:00", "value": 2080 },
+      { "time": "14:46:00", "value": 2150 },
+      { "time": "14:47:00", "value": 2120 },
+      { "time": "14:48:00", "value": 2200 },
+      { "time": "14:49:00", "value": 2180 },
+      { "time": "14:50:00", "value": 2250 },
+      { "time": "14:51:00", "value": 2220 },
+      { "time": "14:52:00", "value": 2300 },
+      { "time": "14:53:00", "value": 2280 },
+      { "time": "14:54:00", "value": 2350 },
+      { "time": "14:55:00", "value": 2320 },
+      { "time": "14:56:00", "value": 2400 },
+      { "time": "14:57:00", "value": 2380 },
+      { "time": "14:58:00", "value": 2450 },
+      { "time": "14:59:00", "value": 2420 }
+    ],
+    "productSalesData": [
+      {
+        "name": "iPhone 15 Pro Max 256GB",
+        "sales": 256,
+        "revenue": 2560000,
+        "price": 9999
+      },
+      {
+        "name": "华为Mate 60 Pro 512GB",
+        "sales": 189,
+        "revenue": 1512000,
+        "price": 7999
+      },
+      {
+        "name": "小米14 Ultra 1TB",
+        "sales": 145,
+        "revenue": 942500,
+        "price": 6499
+      },
+      {
+        "name": "iPad Air 5 256GB WiFi版",
+        "sales": 123,
+        "revenue": 688800,
+        "price": 5599
+      },
+      {
+        "name": "华为Watch GT 4",
+        "sales": 98,
+        "revenue": 166600,
+        "price": 1699
+      },
+      {
+        "name": "AirPods Pro 2代",
+        "sales": 87,
+        "revenue": 173100,
+        "price": 1999
+      },
+      {
+        "name": "华为FreeBuds Pro 3",
+        "sales": 76,
+        "revenue": 121600,
+        "price": 1599
+      },
+      {
+        "name": "小米手环8 Pro",
+        "sales": 65,
+        "revenue": 32435,
+        "price": 499
+      },
+      {
+        "name": "MacBook Air M2 8GB+256GB",
+        "sales": 54,
+        "revenue": 529200,
+        "price": 9799
+      },
+      {
+        "name": "华为MatePad Pro 11英寸",
+        "sales": 43,
+        "revenue": 215000,
+        "price": 4999
+      }
+    ],
+    "userProfileData": {
+      "age": [
+        { "name": "18-25岁", "value": 35, "percentage": 35 },
+        { "name": "26-35岁", "value": 40, "percentage": 40 },
+        { "name": "36-45岁", "value": 20, "percentage": 20 },
+        { "name": "46岁以上", "value": 5, "percentage": 5 }
+      ],
+      "gender": [
+        { "name": "男性", "value": 55, "percentage": 55 },
+        { "name": "女性", "value": 45, "percentage": 45 }
+      ],
+      "region": [
+        { "name": "广东", "value": 25, "percentage": 25 },
+        { "name": "江苏", "value": 18, "percentage": 18 },
+        { "name": "浙江", "value": 15, "percentage": 15 },
+        { "name": "山东", "value": 12, "percentage": 12 },
+        { "name": "河南", "value": 10, "percentage": 10 },
+        { "name": "其他", "value": 20, "percentage": 20 }
+      ]
+    },
+    "realtimeOrders": [
+      {
+        "id": "ORDER20241214143001",
+        "productName": "iPhone 15 Pro Max 256GB",
+        "price": 9999,
+        "quantity": 1,
+        "buyer": "张小明",
+        "status": "paid",
+        "timestamp": "2024-12-14T14:30:01.000Z"
+      },
+      {
+        "id": "ORDER20241214142958",
+        "productName": "华为Watch GT 4",
+        "price": 1699,
+        "quantity": 2,
+        "buyer": "李小红",
+        "status": "paid",
+        "timestamp": "2024-12-14T14:29:58.000Z"
+      },
+      {
+        "id": "ORDER20241214142955",
+        "productName": "小米14 Ultra 1TB",
+        "price": 6499,
+        "quantity": 1,
+        "buyer": "王小华",
+        "status": "shipped",
+        "timestamp": "2024-12-14T14:29:55.000Z"
+      },
+      {
+        "id": "ORDER20241214142952",
+        "productName": "AirPods Pro 2代",
+        "price": 1999,
+        "quantity": 1,
+        "buyer": "赵小丽",
+        "status": "completed",
+        "timestamp": "2024-12-14T14:29:52.000Z"
+      },
+      {
+        "id": "ORDER20241214142949",
+        "productName": "华为Mate 60 Pro 512GB",
+        "price": 7999,
+        "quantity": 1,
+        "buyer": "陈小军",
+        "status": "paid",
+        "timestamp": "2024-12-14T14:29:49.000Z"
+      },
+      {
+        "id": "ORDER20241214142946",
+        "productName": "小米手环8 Pro",
+        "price": 499,
+        "quantity": 3,
+        "buyer": "刘小美",
+        "status": "pending",
+        "timestamp": "2024-12-14T14:29:46.000Z"
+      },
+      {
+        "id": "ORDER20241214142943",
+        "productName": "iPad Air 5 256GB WiFi版",
+        "price": 5599,
+        "quantity": 1,
+        "buyer": "孙小强",
+        "status": "paid",
+        "timestamp": "2024-12-14T14:29:43.000Z"
+      },
+      {
+        "id": "ORDER20241214142940",
+        "productName": "华为FreeBuds Pro 3",
+        "price": 1599,
+        "quantity": 1,
+        "buyer": "周小燕",
+        "status": "shipped",
+        "timestamp": "2024-12-14T14:29:40.000Z"
+      },
+      {
+        "id": "ORDER20241214142937",
+        "productName": "MacBook Air M2 8GB+256GB",
+        "price": 9799,
+        "quantity": 1,
+        "buyer": "吴小峰",
+        "status": "completed",
+        "timestamp": "2024-12-14T14:29:37.000Z"
+      },
+      {
+        "id": "ORDER20241214142934",
+        "productName": "华为MatePad Pro 11英寸",
+        "price": 4999,
+        "quantity": 2,
+        "buyer": "郑小雨",
+        "status": "paid",
+        "timestamp": "2024-12-14T14:29:34.000Z"
+      }
+    ],
+    "anchorList": [
+      {
+        "id": "anchor_1",
+        "name": "李佳琦",
+        "followers": 5000000,
+        "isLive": true,
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=李佳琦"
+      },
+      {
+        "id": "anchor_2",
+        "name": "薇娅",
+        "followers": 4000000,
+        "isLive": true,
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=薇娅"
+      },
+      {
+        "id": "anchor_3",
+        "name": "罗永浩",
+        "followers": 3000000,
+        "isLive": false,
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=罗永浩"
+      },
+      {
+        "id": "anchor_4",
+        "name": "辛巴",
+        "followers": 3500000,
+        "isLive": true,
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=辛巴"
+      },
+      {
+        "id": "anchor_5",
+        "name": "李子柒",
+        "followers": 2800000,
+        "isLive": false,
+        "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=李子柒"
+      }
+    ],
+    "categoryList": [
+      {
+        "id": "category_1",
+        "name": "手机数码",
+        "productCount": 156,
+        "icon": "icon-mobile"
+      },
+      {
+        "id": "category_2",
+        "name": "电脑办公",
+        "productCount": 89,
+        "icon": "icon-desktop"
+      },
+      {
+        "id": "category_3",
+        "name": "家用电器",
+        "productCount": 234,
+        "icon": "icon-home"
+      },
+      {
+        "id": "category_4",
+        "name": "美妆护肤",
+        "productCount": 445,
+        "icon": "icon-beauty"
+      },
+      {
+        "id": "category_5",
+        "name": "服装鞋包",
+        "productCount": 567,
+        "icon": "icon-clothes"
+      },
+      {
+        "id": "category_6",
+        "name": "食品生鲜",
+        "productCount": 123,
+        "icon": "icon-food"
+      },
+      {
+        "id": "category_7",
+        "name": "家居日用",
+        "productCount": 89,
+        "icon": "icon-furniture"
+      },
+      {
+        "id": "category_8",
+        "name": "运动户外",
+        "productCount": 67,
+        "icon": "icon-sport"
+      },
+      {
+        "id": "category_9",
+        "name": "汽车用品",
+        "productCount": 45,
+        "icon": "icon-car"
+      },
+      {
+        "id": "category_10",
+        "name": "图书音像",
+        "productCount": 78,
+        "icon": "icon-book"
+      }
+    ]
+  }
+}

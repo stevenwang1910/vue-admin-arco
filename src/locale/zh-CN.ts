@@ -26,6 +26,7 @@ import locale500 from '@/views/exception/500/locale/zh-CN'
 import localeUserInfo from '@/views/user/info/locale/zh-CN'
 import localeUserSetting from '@/views/user/setting/locale/zh-CN'
 /** simple end */
+import localeLiveCommerce from '@/views/live-commerce-dashboard/locale/zh-CN'
 import localeSettings from './zh-CN/settings'
 
 export default {
@@ -65,4 +66,5 @@ export default {
   ...localeUserInfo,
   ...localeUserSetting,
   /** simple end */
+  ...localeLiveCommerce,
 }

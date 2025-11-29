@@ -5,6 +5,7 @@ import baseConfig from './vite.config.base'
 export default ({ mode }) => {
   // 加载 env 文件
   const env = loadEnv(mode, process.cwd())
+  // eslint-disable-next-line no-console
   console.log('VITE_PORT:', env.VITE_PORT)
 
   return mergeConfig(
