@@ -68,3 +68,65 @@ export interface DataOverviewRes {
 export function queryDataOverview() {
   return axios.post<DataOverviewRes>('/api/data-overview')
 }
+
+// 直播销售数据大盘接口
+interface CoreMetricsRes {
+  realTimeOnline: number
+  totalViews: number
+  totalSales: number
+  totalOrders: number
+  avgOrderValue: number
+  conversionRate: number
+  growthRates: {
+    realTimeOnline: number
+    totalViews: number
+    totalSales: number
+    totalOrders: number
+    avgOrderValue: number
+    conversionRate: number
+  }
+}
+
+export function queryCoreMetrics() {
+  return axios.get<CoreMetricsRes>('/api/live-sales/core-metrics')
+}
+
+interface SalesTrendParams {
+  timeRange: string
+}
+
+interface SalesTrendRes {
+  xAxis: string[]
+  data: Array<{ name: string; data: number[] }>
+}
+
+export function querySalesTrend(params: SalesTrendParams) {
+  return axios.post<SalesTrendRes>('/api/live-sales/sales-trend', params)
+}
+
+interface ProductSalesRankRes {
+  list: Array<{
+    ranking: number
+    productName: string
+    salesVolume: number
+    salesAmount: number
+  }>
+}
+
+export function queryProductSalesRank() {
+  return axios.get<ProductSalesRankRes>('/api/live-sales/product-sales-rank')
+}
+
+interface UserPortraitRes {
+  genderDistribution: Array<{ name: string; value: number }>
+  ageDistribution: Array<{ name: string; value: number }>
+  regionDistribution: Array<{ name: string; value: number }>
+}
+
+export function queryUserPortrait() {
+  return axios.get<UserPortraitRes>('/api/live-sales/user-portrait')
+}
+
+export function querySalesByCategory() {
+  return axios.get<Array<{ name: string; value: number }>>('/api/live-sales/sales-by-category')
+}
