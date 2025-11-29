@@ -33,6 +33,16 @@ const DASHBOARD: AppRouteRecordRaw = {
         roles: ['admin'],
       },
     },
+    {
+      path: 'live-streaming',
+      name: 'LiveStreaming',
+      component: () => import('@/views/dashboard/live-streaming/index.vue'),
+      meta: {
+        locale: 'menu.dashboard.liveStreaming',
+        requiresAuth: true,
+        roles: ['*'],
+      },
+    },
     /** simple end */
   ],
 }
