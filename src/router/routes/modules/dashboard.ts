@@ -34,6 +34,16 @@ const DASHBOARD: AppRouteRecordRaw = {
       },
     },
     /** simple end */
+    {
+      path: 'content-management',
+      name: 'ContentManagement',
+      component: () => import('@/views/dashboard/content-management/index.vue'),
+      meta: {
+        locale: 'menu.dashboard.contentManagement',
+        requiresAuth: true,
+        roles: ['*'],
+      },
+    },
   ],
 }
 
